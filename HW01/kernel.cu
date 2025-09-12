@@ -20,7 +20,7 @@ int main() {
   cudaMalloc((void **)&d_c, size);
   cudaMemcpy(d_a, h_a, size, cudaMemcpyHostToDevice);
   cudaMemcpy(d_b, h_b, size, cudaMemcpyHostToDevice);
-  5 vector_add<<<1, n>>>(d_a, d_b, d_c, n);
+  vector_add<<<1, n>>>(d_a, d_b, d_c, n);
   cudaMemcpy(h_c, d_c, size, cudaMemcpyDeviceToHost);
   std::cout << "Result: ";
   for (int i = 0; i < n; i++) {
