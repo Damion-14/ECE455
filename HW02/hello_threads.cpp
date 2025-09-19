@@ -3,7 +3,7 @@
 #include <vector>
 
 void say_hello(int thread, int total_threads) {
-  printf("Hello from thread %i of %i", thread, total_threads);
+  printf("Hello from thread %i of %i\n", thread, total_threads);
 }
 
 int main() {
