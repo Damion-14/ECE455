@@ -8,7 +8,7 @@ int main() {
   const int N = 10000000;
   std::vector<int> data(N, 1); // all ones
 
-  for (int thread = 1; thread < 9; thread *= 2) {
+  for (int threads = 1; threads < 9; threads *= 2) {
     double sum = 0;
 
     double t0 = omp_get_wtime();
@@ -17,7 +17,7 @@ int main() {
       sum += data[i];
     }
     double t1 = omp_get_wtime();
-    std::cout << "Thread: " << thread << std::endl << "Time: "  << t1-t0 << std::endl << "Sum: " << sum << std::endl;
+    std::cout << "# of threads: " << threads << std::endl << "Time: "  << t1-t0 << std::endl << "Sum: " << sum << std::endl;
   }
   return 0;
 }
