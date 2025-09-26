@@ -1,0 +1,12 @@
+# of threads: 1
+Time: 0.0539318
+Sum: 1e+07
+# of threads: 2
+Time: 0.0268003
+Sum: 1e+07
+# of threads: 4
+Time: 0.0185434
+Sum: 1e+07
+# of threads: 8
+Time: 0.0203651
+Sum: 1e+07
