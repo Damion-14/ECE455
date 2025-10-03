@@ -8,5 +8,5 @@
 
 cd $SLURM_SUBMIT_DIR
 module load nvidia/cuda
-nvcc -fopenmp hello.cu -o hello
+nvcc hello.cu -o hello
 ./hello
