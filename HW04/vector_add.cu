@@ -11,7 +11,7 @@ __global__ void vector_add(const float *A, const float *B, float *C, int N) {
 int main() {
   int N = 1000000;
   
-  size_t size = sizeof(int);
+  size_t size = sizeof(float);
 
   float *h_A = (float*) malloc(size);
   float *h_B = (float*) malloc(size);
@@ -33,7 +33,7 @@ int main() {
 
   vector_add<<< blocks_per_grid, threads_per_block >>>(d_A, d_B, d_C, N); 
 
-  cudaMemcpy(h_C, d_C, size, cudaMemcpyHostToDevice);
+  cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
 
   printf("C[0] = %f\n", h_C[0]);
 
